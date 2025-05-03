@@ -1,7 +1,6 @@
 #INTERAGERA MED RATIOSARNA 
 
 import sqlite3
-from ratiocalc import *
 
 RATIO_DATABASE_NAME = "ticket_trades_ratios.db"
 
@@ -127,5 +126,5 @@ def oneofthisequals(base_type: str, base_quantity: float):
 
 if __name__ == "__main__":
     display_relationships()
-    #print(hypotrade("NSA", 3, "ÖG", 4))
+    print(hypotrade("NSA", 3, "ÖG", 4))
     #print(oneofthisequals("NSA", 4))

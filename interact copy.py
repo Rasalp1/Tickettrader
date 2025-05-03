@@ -1,7 +1,6 @@
 #INTERAGERA MED RATIOSARNA 
 
 import sqlite3
-from ratiocalc import *
 
 RATIO_DATABASE_NAME = "ticket_trades_ratios.db"
 
