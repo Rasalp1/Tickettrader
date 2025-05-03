@@ -12,6 +12,8 @@ __pycache__/
 
 # Ignore file containing API key
 tradereader.py
+
+# Ignore unecesary files
 tradestorer.py
 ratelimiter.py
 ratiocalc.py
