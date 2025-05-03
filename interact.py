@@ -44,31 +44,24 @@ def hypotrade(off_t: str, off_a: int, req_t: str, req_a: int):
     off_req_key = (off_t, req_t)
     avg_ratio = relative_values[off_req_key]['average_ratio']
     trade_ratio = req_a / off_a # How many requested per offered in this trade
+    trade_ratio_rounded = round(trade_ratio, 1)
 
     if trade_ratio < avg_ratio:
         status = "underpay"
-        message = f"  A trade of {off_a} {off_t} for {req_a} {req_t} ({trade_ratio} {req_t}/{off_t}) looks like an 'underpay' compared to the average of ({avg_ratio} {req_t}/{off_t})."
+        message = f"  A trade of {off_a} {off_t} for {req_a} {req_t} ({trade_ratio_rounded} {req_t}/{off_t}) looks like an 'underpay' compared to the average of ({avg_ratio} {req_t}/{off_t})."
     elif trade_ratio > avg_ratio:
         status = "overpay"
-        message = f"  A trade of {off_a} {off_t} for {req_a} {req_t} ({trade_ratio} {req_t}/{off_t}) looks like an 'overpay' compared to the average ({avg_ratio} {req_t}/{off_t})."
+        message = f"  A trade of {off_a} {off_t} for {req_a} {req_t} ({trade_ratio_rounded} {req_t}/{off_t}) looks like an 'overpay' compared to the average ({avg_ratio} {req_t}/{off_t})."
     else:
         status = "fair"
-        message = f"  A trade of {off_a} {off_t} for {req_a} {req_t} ({trade_ratio} {req_t}/{off_t}) seems fair based on the average."
+        message = f"  A trade of {off_a} {off_t} for {req_a} {req_t} ({trade_ratio_rounded} {req_t}/{off_t}) seems fair based on the average."
     info_dict = {
-        "trade_details": {
-            "offered_type": off_t,
-            "offered_amount": off_a,
-            "requested_type": req_t,
-            "requested_amount": req_a,
-        },
-        "analysis": {
             "status": status,
             "message": message,
             "your_ratio": round(trade_ratio, 1),
             "average_ratio": round(avg_ratio, 1),
             "ratio_unit": f"{req_t}_per_{off_t}",
         }
-    }
     return info_dict
 
 def oneofthisequals(base_type: str, base_quantity: float):
@@ -125,6 +118,6 @@ def oneofthisequals(base_type: str, base_quantity: float):
     return equivalents
 
 if __name__ == "__main__":
-    display_relationships()
+    #display_relationships()
     print(hypotrade("NSA", 3, "ÖG", 4))
     #print(oneofthisequals("NSA", 4))
