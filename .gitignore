@@ -1,0 +1,14 @@
+# Ignore virtual environments
+cleanenv/
+
+# Ignore Python cache files
+__pycache__/
+
+# Ignore system files
+.DS_Store
+
+# Ignore environment/config files
+*.sqlite
+
+# Ignore file containing API key
+ticketreader.py
