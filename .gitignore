@@ -11,11 +11,7 @@ __pycache__/
 *.sqlite
 
 # Ignore file containing API key
-tradereader.py
+apikey.py
 
 # Ignore unecesary files
-tradestorer.py
-ratelimiter.py
-ratiocalc.py
-listgenerator.py
 Valborg_Trades.txt
